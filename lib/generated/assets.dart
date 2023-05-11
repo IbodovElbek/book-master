@@ -31,5 +31,7 @@ class Assets {
   static const String staticInterRegular = 'assets/fonts/static/Inter-Regular.ttf';
   static const String staticInterSemiBold = 'assets/fonts/static/Inter-SemiBold.ttf';
   static const String staticInterThin = 'assets/fonts/static/Inter-Thin.ttf';
+  static const String translationFrFR = 'assets/translation/fr-FR.json';
+  static const String translationUzUZ = 'assets/translation/uz-UZ.json';
 
 }

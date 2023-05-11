@@ -16,7 +16,7 @@ class DataBase{
 
   static List getfavorite(){
     var list=box.get("favorite");
-    return list;
+    return list??[];
   }
 
   static void setbooks(List list)async{
@@ -26,26 +26,17 @@ class DataBase{
   static List getbooks(){
     var list=box.get("books");
     return list??[
-      ['assets/images/ayiq.png', "Qirq yolg'on", false],
-      ['assets/images/bemor.png', "Qirq yolg'on2", false],
-      [ 'assets/images/jazo.png',"Qirq yolg'on", false],
-      [ 'assets/images/moddiy.png', "Qirq yolg'on", false],
-      [ 'assets/images/otaga.png',"Qirq yolg'on", false],
-      [ 'assets/images/qimmat.png', "Qirq yolg'on", false],
-      [ 'assets/images/qirq.png',"Qirq yolg'on", false],
-      [ 'assets/images/ramuzchi.png', "Qirq yolg'on", false],
-      [ 'assets/images/soat.png',"Qirq yolg'on", false],
-      ['assets/images/ayiq.png', "Qirq yolg'on", false],
-      ['assets/images/bemor.png', "Qirq yolg'on2", false],
-      [ 'assets/images/jazo.png',"Qirq yolg'on", false],
-      [ 'assets/images/moddiy.png', "Qirq yolg'on", false],
-      [ 'assets/images/otaga.png',"Qirq yolg'on", false],
-      [ 'assets/images/qimmat.png', "Qirq yolg'on", false],
-      [ 'assets/images/qirq.png',"Qirq yolg'on", false],
-      [ 'assets/images/ramuzchi.png', "Qirq yolg'on", false],
-      [ 'assets/images/soat.png',"Qirq yolg'on", false],
-      [ 'assets/images/splash.png', "Qirq yolg'on", false],
-      [ 'assets/images/yaxshibola.png',"Qirq yolg'on", false],
+      ['assets/images/qirq.png', "Qirq yolg'on", false],
+      ['assets/images/moddiy.png', "Moddiy yordam", false],
+      [ 'assets/images/jazo.png',"Jazo", false],
+      [ 'assets/images/ramuzchi.png', "Ramuzchi boboy", false],
+      [ 'assets/images/yaxshibola.png',"Yaxshi bola", false],
+      [ 'assets/images/qimmat.png', "Qimmatli sovg‘a", false],
+      [ 'assets/images/otaga.png',"Otaga itoat qilish kerak", false],
+      [ 'assets/images/ayiq.png', "Ayiqpolvonning xatosi", false],
+      [ 'assets/images/soat.png',"Soat", false],
+      ['assets/images/bemor.png', "Bemor piyoz", false],
+
     ];
   }
 }
