@@ -105,6 +105,7 @@
 //             );
 //   }
 // }
+import 'package:book/Utils/DialogBox.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
@@ -134,20 +135,16 @@ class _RamuzchiBoboState extends State<RamuzchiBobo> {
           style: TextStyle(color: Colors.red,fontSize: 18),
           recognizer: TapGestureRecognizer()
             ..onTap=(){
-              LogService.i(words.length.toString());
-              LogService.w(textSpan.length.toString());
-              setState(() {
-                isselected=!isselected;
-              });
-              if(isselected== false){
-                context.setLocale(const Locale('uz','UZ'));
-              }
-              else{
-                context.setLocale(const Locale('fr','FR'));
+            String uzbek=words[word];
 
-              }
+           showDialog(context: context, builder: (context){
+             context.setLocale(const Locale('fr','FR'));
+             String fransuz ="${words[word]}".tr();
+             return DialogBox(uzbek: uzbek,fransuz: fransuz,);
+           });
+
             },
-          text: "${words[word]}".tr()+' ',
+          text: "${words[word]}"+' ',
 
         )
         );
@@ -159,9 +156,13 @@ class _RamuzchiBoboState extends State<RamuzchiBobo> {
         ));
       }
     }
-    return RichText(text: TextSpan(
-      children: textSpan,
-    ));
+    return ListView(children: [
+      RichText(text: TextSpan(
+        children: textSpan,
+      )),
+    ],
+
+    );
 
   }
 }

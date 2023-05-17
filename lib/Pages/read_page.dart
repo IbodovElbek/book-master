@@ -19,9 +19,14 @@ class _Read_PageState extends State<Read_Page> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("${DataBase.getbookname()}"),
+        backgroundColor: Colors.black,
+centerTitle: true,
+      ),
       body: Container(
+padding: EdgeInsets.only(right:10,left: 10),
        child: Rm
-
        ),
         );
   }
