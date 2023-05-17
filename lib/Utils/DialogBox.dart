@@ -12,10 +12,16 @@ class DialogBox extends StatelessWidget {
       backgroundColor: Colors.white,
       content: Container(
         height: 120,
-        child: Column(
+        child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(fransuz,style: TextStyle(color: Colors.black,fontSize: 25),),
-            Text(uzbek,style: TextStyle(color: Colors.grey,fontSize: 15),),
+            Column(
+              children: [
+                Text(fransuz,style: TextStyle(color: Colors.black,fontSize: 25),),
+                Text(uzbek,style: TextStyle(color: Colors.grey,fontSize: 15),),
+              ],
+            ),
+
+            ElevatedButton(onPressed: (){Navigator.pop(context);}, child: Container(width: 100, child: Center(child: Text("Ok"))))
           ],
         ),
       ),
