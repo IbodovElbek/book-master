@@ -3,6 +3,7 @@ import 'package:book/Services/log_service.dart';
 import 'package:book/generated/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 
 import '../Pages/read_page.dart';
 
@@ -52,18 +53,16 @@ String? bookname1;
                 child: Text(bookname),
               ),
               Container(
-                height: 16,
-                width: 20,
+                height: 23,
+                width: 23,
                 child: Center(
-                    child: InkWell(
+                    child:InkWell(
                   onTap:onChanged,
                   child: isFavorite
-                      ?Icon(
-                    Icons.favorite,
-                    color: Colors.red,
-                  ): Image(image: AssetImage(Assets.imagesFavorite)),
+                      ?Image(image: AssetImage(Assets.imagesRedfavorite)): Image(image: AssetImage(Assets.imagesFavorite)),
 
-                )),
+                )
+                ),
               )
             ],
           ),

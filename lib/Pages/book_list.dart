@@ -104,6 +104,7 @@ List favoritelist(){
               onChanged:()=>CheckFavorite(index),
 
 
+
             );
           },
 

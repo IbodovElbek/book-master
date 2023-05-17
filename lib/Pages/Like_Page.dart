@@ -18,6 +18,8 @@ class _Like_PageState extends State<Like_Page> {
 
   List favorites=DataBase.getfavorite();
 
+
+
   void CheckFavorite(int index) {
     setState(() {
       favorites[index][2] = !favorites[index][2];
@@ -49,7 +51,6 @@ class _Like_PageState extends State<Like_Page> {
             bookname: favorites[index][1],
             isFavorite: favorites[index][2],
             onChanged:()=>CheckFavorite(index),
-
 
           );
         },

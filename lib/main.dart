@@ -8,9 +8,9 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
 void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await Hive.initFlutter();
-  WidgetsFlutterBinding.ensureInitialized();
   await Hive.openBox('book');
   runApp(
     EasyLocalization(
