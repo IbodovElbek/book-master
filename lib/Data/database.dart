@@ -26,12 +26,12 @@ class DataBase{
   static List getbooks(){
     var list=box.get("books");
     return list??[
-      ['assets/images/qirq.png', "Qirq yolg'on", false],
+      ['assets/images/qirq.png', "Qirq yolg‘on", false],
       ['assets/images/moddiy.png', "Moddiy yordam", false],
       [ 'assets/images/jazo.png',"Jazo", false],
-      [ 'assets/images/ramuzchi.png', "Ramuzchi boboy", false],
+      [ 'assets/images/ramuzchi.png', "Ramuzchi Boboy", false],
       [ 'assets/images/yaxshibola.png',"Yaxshi bola", false],
-      [ 'assets/images/qimmat.png', "Qimmatli sovg‘a", false],
+      [ 'assets/images/qimmat.png', "Qimmatli sovg’a", false],
       [ 'assets/images/otaga.png',"Otaga itoat qilish kerak", false],
       [ 'assets/images/ayiq.png', "Ayiqpolvonning xatosi", false],
       [ 'assets/images/soat.png',"Soat", false],

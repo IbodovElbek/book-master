@@ -34,6 +34,14 @@ String? bookname1;
           height: 54,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.3),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: Offset(5,10), // changes the shadow position
+              ),
+            ],
             color: Color.fromRGBO(254, 254, 254, 1),
             borderRadius: BorderRadius.circular(8),
           ),

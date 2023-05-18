@@ -30,11 +30,19 @@ class _HomePageState extends State<HomePage> {
       body:  _pages[currentpage],
       bottomNavigationBar: Container(
         height: 60,
-        width: 320,
+        width: MediaQuery.of(context).size.width,
         margin: EdgeInsets.only(right: 20,left: 20,bottom: 8),
         padding: EdgeInsets.only(right: 50,left: 50),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: Offset(0,5), // changes the shadow position
+              ),
+            ],
             color: Colors.white
         ),
         child:Row(

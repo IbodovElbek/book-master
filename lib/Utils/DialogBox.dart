@@ -11,7 +11,7 @@ class DialogBox extends StatelessWidget {
     return AlertDialog(
       backgroundColor: Colors.white,
       content: Container(
-        height: 120,
+        height: 150,
         child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
