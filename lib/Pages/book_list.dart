@@ -82,7 +82,7 @@ List favoritelist(){
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromRGBO(245, 245, 245, 1),
+        backgroundColor: Color.fromRGBO(222, 217, 218, 0.3),
         appBar: AppBar(
           centerTitle: true,
           title: Text(

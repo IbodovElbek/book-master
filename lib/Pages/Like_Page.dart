@@ -42,6 +42,7 @@ class _Like_PageState extends State<Like_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(222, 217, 218, 0.3),
       body: ListView.builder(
         itemCount: favorites.length,
         itemBuilder: (BuildContext context,int index){

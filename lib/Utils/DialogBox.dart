@@ -21,7 +21,13 @@ class DialogBox extends StatelessWidget {
               ],
             ),
 
-            ElevatedButton(onPressed: (){Navigator.pop(context);}, child: Container(width: 100, child: Center(child: Text("Ok"))))
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [ElevatedButton(onPressed: (){Navigator.pop(context);}, child: Center(child: Text("Add word"))),
+                SizedBox(width: 15,),
+
+                ElevatedButton(onPressed: (){Navigator.pop(context);}, child: Container(width: 100, child: Center(child: Text("Ok")))),
+              ],
+            )
           ],
         ),
       ),

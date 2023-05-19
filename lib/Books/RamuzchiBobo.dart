@@ -107,12 +107,10 @@
 // }
 import 'package:book/Data/database.dart';
 import 'package:book/Utils/DialogBox.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../Services/log_service.dart';
 import 'books.dart';
 
 class RamuzchiBobo extends StatefulWidget {

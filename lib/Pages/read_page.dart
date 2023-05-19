@@ -15,13 +15,12 @@ class Read_Page extends StatefulWidget {
 class _Read_PageState extends State<Read_Page> {
   RamuzchiBobo Rm=RamuzchiBobo();
   @override
-  List<InlineSpan>qwerty=[TextSpan(text: "Salom"),TextSpan(text: "Salom"),TextSpan(text: "Salom"),TextSpan(text: "Salom"),TextSpan(text: "Salom"),TextSpan(text: "Salom"),TextSpan(text: "Salom"),TextSpan(text: "Salom"),TextSpan(text: "Salom"),];
-
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("${DataBase.getbookname()}"),
-        backgroundColor: Colors.black,
+        title: Text("${DataBase.getbookname()}",style: TextStyle(color: Colors.white),),
+        backgroundColor:Color.fromRGBO(6, 104, 134, 1),
 centerTitle: true,
       ),
       body: Container(

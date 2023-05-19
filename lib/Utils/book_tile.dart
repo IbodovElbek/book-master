@@ -31,17 +31,9 @@ String? bookname1;
         onTap:toreadPage,
         child: Container(
           padding: EdgeInsets.only(left: 6, top: 5, bottom: 5, right: 6),
-          height: 54,
+          height:65,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.3),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: Offset(5,10), // changes the shadow position
-              ),
-            ],
             color: Color.fromRGBO(254, 254, 254, 1),
             borderRadius: BorderRadius.circular(8),
           ),
@@ -61,13 +53,15 @@ String? bookname1;
                 child: Text(bookname),
               ),
               Container(
+                margin: EdgeInsets.only(right: 12),
                 height: 23,
                 width: 23,
                 child: Center(
                     child:InkWell(
                   onTap:onChanged,
                   child: isFavorite
-                      ?Image(image: AssetImage(Assets.imagesRedfavorite)): Image(image: AssetImage(Assets.imagesFavorite)),
+                      ?Image(image: AssetImage(Assets.imagesRedfavorite),color: Colors.red,):
+                  Image(image: AssetImage(Assets.imagesFavorite)),
 
                 )
                 ),

@@ -3,7 +3,6 @@ import 'package:book/Pages/book_list.dart';
 import 'package:book/Pages/read_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../Data/database.dart';
 import '../generated/assets.dart';
 class HomePage extends StatefulWidget {
   static final id="HomePage";
@@ -56,10 +55,8 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 icon: currentpage == 0
-                    ? const ImageIcon(AssetImage(Assets.imageIconsBooklist),color: Colors.black,
-                )
-                    : const ImageIcon(AssetImage(Assets.imageIconsBooklistw),
-                ),
+                    ? const ImageIcon(AssetImage(Assets.imageIconsBooklist),size: 30,color: Colors.red)
+                    :const ImageIcon(AssetImage(Assets.imageIconsBooklist),color: Colors.black)
               ),
             ),
             Expanded(
@@ -71,8 +68,8 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 icon: currentpage == 1
-                    ? const ImageIcon(AssetImage(Assets.imageIconsReadpageb),size: 40,color: Colors.black)
-                    : const ImageIcon(AssetImage(Assets.imageIconsReadpage),
+                    ? const ImageIcon(AssetImage(Assets.imageIconsReadpage),size:40,color: Colors.red)
+                    : const ImageIcon(AssetImage(Assets.imageIconsReadpage),size: 35,color: Colors.black
                 ),
               ),
             ),
@@ -85,8 +82,8 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 icon: currentpage == 2
-                    ? const ImageIcon(AssetImage(Assets.imageIconsLikepageb),size: 80,color: Colors.black)
-                    : const ImageIcon(AssetImage(Assets.imageIconsLikepage),
+                    ? const ImageIcon(AssetImage(Assets.imageIconsLikepageb),size: 30,color: Colors.red)
+                    : const ImageIcon(AssetImage(Assets.imageIconsLikepage),color: Colors.black,
                 ),
               ),
             ),
