@@ -106,6 +106,7 @@
 //   }
 // }
 import 'package:book/Data/database.dart';
+import 'package:book/Services/log_service.dart';
 import 'package:book/Utils/DialogBox.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
@@ -118,9 +119,15 @@ class RamuzchiBobo extends StatefulWidget {
 
   @override
   State<RamuzchiBobo> createState() => _RamuzchiBoboState();
+
 }
 
 class _RamuzchiBoboState extends State<RamuzchiBobo> {
+  List Starskey=[];
+  List Starsvalue=[];
+bool isStar=false;
+
+
   String? _text;
   List<String>? chagewords;
 @override
@@ -130,8 +137,62 @@ class _RamuzchiBoboState extends State<RamuzchiBobo> {
     setState(() {
       _text=Books.bookstext["${DataBase.getbookname()}"];
       chagewords=Books.changewords["${DataBase.getbookname()}"];
+      Starskey=DataBase.getStarkeyWord();
+      Starsvalue=DataBase.getStarvalueWord();
+      iSStar1;
     });
   }
+void iSStar1(String uzbek){
+  if(!DataBase.getStarkeyWord().contains(uzbek)){
+    setState(() {
+      isStar=true;
+    });
+  }else{
+    setState(() {
+      isStar=false;
+    });
+  }
+}
+
+  void AddWordStar(String uzbek,String fransuz){
+    if(!DataBase.getStarkeyWord().contains(uzbek)){
+      Starskey.add(uzbek);
+      Starsvalue.add(fransuz);
+      DataBase.setStarSkeyWord(Starskey);
+      DataBase.setStarSvalueWord(Starsvalue);
+      setState(() {
+
+      });
+    }
+    else{
+      Starsvalue.remove(fransuz);
+      Starskey.remove(uzbek);
+      DataBase.setStarSkeyWord(Starskey);
+      DataBase.setStarSvalueWord(Starsvalue);
+      LogService.e( DataBase.getStarkeyWord().toString());
+      LogService.w( DataBase.getStarvalueWord().toString());
+    }
+    // if(DataBase.getStarvalueWord().contains(fransuz)&&DataBase.getStarvalueWord()!=null){
+    //   setState(() {
+    //     isStar=true;
+    //   });
+    // }
+    // else{
+    //   setState(() {
+    //     isStar=false;
+    //   });
+    // }
+    LogService.i( DataBase.getStarkeyWord().contains(uzbek).toString());
+
+    LogService.d( DataBase.getStarvalueWord().toString());
+  }
+
+
+
+
+
+
+
   bool isselected=false;
   @override
   Widget build(BuildContext context) {
@@ -143,10 +204,19 @@ class _RamuzchiBoboState extends State<RamuzchiBobo> {
           style: TextStyle(color: Colors.red,fontSize: 18),
           recognizer: TapGestureRecognizer()
             ..onTap=(){
+
+              String fransuz ="${Books.frtranslate["${DataBase.getbookname()}"]["${words[word]}"]}";
               String uzbek= "${Books.uztranslate["${DataBase.getbookname()}"]["${words[word]}"]}";
+              iSStar1(uzbek);
            showDialog(context: context, builder: (context){
-             String fransuz ="${Books.frtranslate["${DataBase.getbookname()}"]["${words[word]}"]}";
-             return DialogBox(uzbek: uzbek,fransuz: fransuz,);
+
+             return DialogBox(
+               addWord:()=> AddWordStar(fransuz,uzbek),
+               uzbek: uzbek,
+               fransuz: fransuz,
+                isStar:isStar,
+
+             );
            });
 
             },

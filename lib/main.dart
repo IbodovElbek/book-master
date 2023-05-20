@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
+import 'Pages/StarwordPage.dart';
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
         Book_List.id:(context)=>Book_List(),
         Like_Page.id:(context)=>Like_Page(),
         HomePage.id:(context)=>HomePage(),
+        StarPage.id:(context)=>StarPage(),
       },
     );
   }

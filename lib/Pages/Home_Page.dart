@@ -4,6 +4,7 @@ import 'package:book/Pages/read_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../generated/assets.dart';
+import 'StarwordPage.dart';
 class HomePage extends StatefulWidget {
   static final id="HomePage";
   const HomePage({ Key? key,}) : super(key: key);
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   var _pages=[
   Book_List(),
     Read_Page( ),
-   Like_Page(),
+  StarPage(),
   ];
   @override
   Widget build(BuildContext context) {

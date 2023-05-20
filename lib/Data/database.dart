@@ -39,4 +39,24 @@ class DataBase{
 
     ];
   }
+
+
+ static void setStarSkeyWord(List list)async{
+    box.put("Stark", list);
+  }
+
+  static List getStarkeyWord(){
+    var list=box.get("Stark");
+    return list??[];
+  }
+
+  static void setStarSvalueWord(List list)async{
+    box.put("Starv", list);
+  }
+
+  static List getStarvalueWord(){
+    var list=box.get("Starv");
+    return list??[];
+  }
+
 }
