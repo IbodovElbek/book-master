@@ -33,7 +33,6 @@ bool isStar=false;
       chagewords=Books.changewords["${DataBase.getbookname()}"];
       Starskey=DataBase.getStarkeyWord();
       Starsvalue=DataBase.getStarvalueWord();
-
     });
   }
 
