@@ -1,11 +1,6 @@
-import 'package:book/Data/database.dart';
-import 'package:book/Services/log_service.dart';
 import 'package:book/generated/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:like_button/like_button.dart';
-
-import '../Pages/read_page.dart';
 
 class Book_Tile extends StatelessWidget {
   final String image;
@@ -60,7 +55,8 @@ String? bookname1;
                     child:InkWell(
                   onTap:onChanged,
                   child: isFavorite
-                      ?Image(image: AssetImage(Assets.imagesRedfavorite),color: Colors.red,):
+                      ?Image(image: AssetImage(Assets.imagesRedfavorite),
+                    color: Colors.red,):
                   Image(image: AssetImage(Assets.imagesFavorite)),
 
                 )
