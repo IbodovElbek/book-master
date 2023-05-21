@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 class DialogBox extends StatelessWidget {
   final String fransuz;
   final String uzbek;
-final bool  isStar;
   void Function()? addWord;
 
 
@@ -12,7 +11,6 @@ final bool  isStar;
     required this.fransuz,
     required this.uzbek,
     required this.addWord,
-    required this.isStar,
     })
       : super(key: key);
 
@@ -30,13 +28,7 @@ final bool  isStar;
               children: [
                 IconButton(
                   onPressed: addWord,
-                  icon: !isStar
-                      ? Icon(
-                          Icons.star_border_outlined,
-                          color: Colors.amberAccent,
-                          size: 35,
-                        )
-                      : Icon(
+                  icon:Icon(
                           Icons.star,
                           color: Colors.amberAccent,
                           size: 35,

@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../Utils/Snacbar_helper.dart';
 import 'books.dart';
 
 class RamuzchiBobo extends StatefulWidget {
@@ -32,20 +33,9 @@ bool isStar=false;
       chagewords=Books.changewords["${DataBase.getbookname()}"];
       Starskey=DataBase.getStarkeyWord();
       Starsvalue=DataBase.getStarvalueWord();
-      iSStar1;
+
     });
   }
-void iSStar1(String uzbek){
-  if(!DataBase.getStarkeyWord().contains(uzbek)){
-    setState(() {
-      isStar=true;
-    });
-  }else{
-    setState(() {
-      isStar=false;
-    });
-  }
-}
 
   void AddWordStar(String uzbek,String fransuz){
     if(!DataBase.getStarkeyWord().contains(uzbek)){
@@ -53,9 +43,8 @@ void iSStar1(String uzbek){
       Starsvalue.add(fransuz);
       DataBase.setStarSkeyWord(Starskey);
       DataBase.setStarSvalueWord(Starsvalue);
-      setState(() {
-
-      });
+      showSuccessMessage(context, message: "Word succses added");
+      Navigator.pop(context);
     }
     else{
       Starsvalue.remove(fransuz);
@@ -64,9 +53,10 @@ void iSStar1(String uzbek){
       DataBase.setStarSvalueWord(Starsvalue);
       LogService.e( DataBase.getStarkeyWord().toString());
       LogService.w( DataBase.getStarvalueWord().toString());
+      showErrorMessage(context, message: "Sucsses removed");
+      Navigator.pop(context);
     }
     LogService.i( DataBase.getStarkeyWord().contains(uzbek).toString());
-
     LogService.d( DataBase.getStarvalueWord().toString());
   }
 
@@ -87,17 +77,14 @@ void iSStar1(String uzbek){
           style: TextStyle(color: Colors.red,fontSize: 18),
           recognizer: TapGestureRecognizer()
             ..onTap=(){
-
               String fransuz ="${Books.frtranslate["${DataBase.getbookname()}"]["${words[word]}"]}";
               String uzbek= "${Books.uztranslate["${DataBase.getbookname()}"]["${words[word]}"]}";
-              iSStar1(uzbek);
            showDialog(context: context, builder: (context){
 
              return DialogBox(
                addWord:()=> AddWordStar(fransuz,uzbek),
                uzbek: uzbek,
                fransuz: fransuz,
-                isStar:isStar,
              );
            });
 

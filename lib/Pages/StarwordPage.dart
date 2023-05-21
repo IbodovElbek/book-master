@@ -85,31 +85,5 @@ class _StarPageState extends State<StarPage> {
     );
   }
 
-  Widget Words(int index) {
-    return Container(
-      margin: EdgeInsets.only(top: 5, right: 20, left: 20),
-      height: 40,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-          color: Colors.grey.withOpacity(0.5),
-          borderRadius: BorderRadius.circular(10)),
-      child: Row(
-        children: [
-          Expanded(
-              child: Center(
-                  child: Text(
-            "${Uwords[index]}",
-            style: TextStyle(fontSize: 20),
-          ))),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.delete,
-              color: Colors.red,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+
 }
