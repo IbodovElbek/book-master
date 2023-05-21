@@ -172,16 +172,6 @@ void iSStar1(String uzbek){
       LogService.e( DataBase.getStarkeyWord().toString());
       LogService.w( DataBase.getStarvalueWord().toString());
     }
-    // if(DataBase.getStarvalueWord().contains(fransuz)&&DataBase.getStarvalueWord()!=null){
-    //   setState(() {
-    //     isStar=true;
-    //   });
-    // }
-    // else{
-    //   setState(() {
-    //     isStar=false;
-    //   });
-    // }
     LogService.i( DataBase.getStarkeyWord().contains(uzbek).toString());
 
     LogService.d( DataBase.getStarvalueWord().toString());
@@ -215,7 +205,6 @@ void iSStar1(String uzbek){
                uzbek: uzbek,
                fransuz: fransuz,
                 isStar:isStar,
-
              );
            });
 

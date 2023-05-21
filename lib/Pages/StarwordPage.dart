@@ -6,7 +6,7 @@ import '../Data/database.dart';
 import '../generated/assets.dart';
 
 class StarPage extends StatefulWidget {
-  static final  id = "StarPage";
+  static final id = "StarPage";
 
   const StarPage({Key? key}) : super(key: key);
 
@@ -15,26 +15,19 @@ class StarPage extends StatefulWidget {
 }
 
 class _StarPageState extends State<StarPage> {
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    Removeword;
   }
+
   List Uwords = DataBase.getStarvalueWord();
   List Fwords = DataBase.getStarkeyWord();
-  void Removeword(int index){
-    Uwords.removeAt(index);
-    Fwords.removeAt(index);
-    DataBase.setStarSvalueWord(Fwords);
-    DataBase.setStarSkeyWord(Uwords);
-    LogService.i(Uwords.toString());
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(222, 217, 218, 0.3),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -50,7 +43,43 @@ class _StarPageState extends State<StarPage> {
       body: ListView.builder(
         itemCount: Uwords.length,
         itemBuilder: (context, int index) {
-          return Words(index);
+          return Container(
+            height: 65,
+            margin: EdgeInsets.only(top: 8,right: 12,left: 12),
+            decoration: BoxDecoration(
+              color:  Color.fromRGBO(254, 254, 254, 1),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: ListTile(
+                title: Text("${Uwords[index]}-${Fwords[index]} "),
+                trailing: Container(
+                  width: 40,
+                  child: Expanded(
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    Uwords.removeAt(index);
+                                    Fwords.removeAt(index);
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.star,
+                                  color: Colors.amberAccent,
+                                )
+                            )
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          );
         },
       ),
     );
@@ -73,9 +102,12 @@ class _StarPageState extends State<StarPage> {
             style: TextStyle(fontSize: 20),
           ))),
           IconButton(
-              onPressed: ()=>Removeword(index),
-              icon: Icon(Icons.delete,color: Colors.red,)
-          )
+            onPressed: () {},
+            icon: Icon(
+              Icons.delete,
+              color: Colors.red,
+            ),
+          ),
         ],
       ),
     );
