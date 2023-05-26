@@ -49,31 +49,28 @@ class _StarPageState extends State<StarPage> {
               color:  Color.fromRGBO(254, 254, 254, 1),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: ListTile(
-                title: Text("${Uwords[index]}-${Fwords[index]} "),
-                trailing: Container(
-                  width: 40,
-                  child: Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    Uwords.removeAt(index);
-                                    Fwords.removeAt(index);
-                                  });
-                                },
-                                icon: Icon(
-                                  Icons.star,
-                                  color: Colors.amberAccent,
-                                )
-                            )
-                        )
-                      ],
-                    ),
+            child: ListTile(
+              title: Text("${Uwords[index]}-${Fwords[index]} "),
+              trailing: Container(
+                width: 40,
+                child: Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  Uwords.removeAt(index);
+                                  Fwords.removeAt(index);
+                                });
+                              },
+                              icon: Icon(
+                                Icons.star,
+                                color: Colors.amberAccent,
+                              )
+                          )
+                      )
+                    ],
                   ),
                 ),
               ),

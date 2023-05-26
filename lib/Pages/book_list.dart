@@ -2,6 +2,8 @@ import 'package:book/Data/database.dart';
 import 'package:book/Pages/read_page.dart';
 import 'package:book/Services/log_service.dart';
 import 'package:book/Utils/book_tile.dart';
+import 'package:book/Utils/drawer.dart';
+import 'package:book/generated/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -54,9 +56,6 @@ List favoritelist(){
    }
    return favorite;
 }
-
-
-
   void CheckFavorite(int index) {
     setState(() {
       books[index][2] = !books[index][2];
@@ -82,8 +81,56 @@ List favoritelist(){
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+drawer: Drawer(
+  backgroundColor:Color.fromRGBO(222, 217, 218, 1),
+  child: SafeArea(
+    child: Column(
+      children: [
+       Container(
+         child:Center(child: Text("SIMPLE",style: TextStyle(fontSize: 60,fontWeight: FontWeight.bold),),) ,
+         height: 90,
+
+       ),
+        SizedBox(height: 10,),
+        Container(
+          height: 50,
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.black12)
+          ),
+          child: Row(
+            children: [
+              SizedBox(width: 12,),
+              Center(child: Text("Words",style: TextStyle(fontSize: 20),)),
+            ],
+          ),
+        ),
+        SizedBox(height: 10,),
+        Container(
+          padding: EdgeInsets.only(left: 12,right: 12),
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+             Center(child: Text("Haqida",style: TextStyle(fontSize: 20),)),
+              Icon(Icons.info_outline,size: 20,)
+            ],
+          ),
+          height: 50,
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.black12)
+          ),
+        )
+      ],
+    ),
+  ),
+),
         backgroundColor: Color.fromRGBO(222, 217, 218, 0.3),
         appBar: AppBar(
+          // leading: IconButton(
+          //   tooltip: ,
+          //   onPressed: (){
+          //   Scaffold.of(context).openDrawer();
+          //   },
+          //   icon: Icon(Icons.more_horiz_outlined,color: Colors.black,size: 35,),
+          // ),
           centerTitle: true,
           title: Text(
             "SIMPLE",
@@ -102,9 +149,6 @@ List favoritelist(){
               bookname: books[index][1],
               isFavorite: books[index][2],
               onChanged:()=>CheckFavorite(index),
-
-
-
             );
           },
 
