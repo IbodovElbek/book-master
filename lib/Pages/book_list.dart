@@ -123,7 +123,10 @@ drawer: Drawer(
   ),
 ),
         backgroundColor: Color.fromRGBO(222, 217, 218, 0.3),
-        appBar: AppBar(
+        appBar: AppBar(actions: [
+          Icon(Icons.info_outline,color: Colors.black,),
+          SizedBox(width: 20,)
+        ],
           // leading: IconButton(
           //   tooltip: ,
           //   onPressed: (){

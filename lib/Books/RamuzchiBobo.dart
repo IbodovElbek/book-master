@@ -41,6 +41,7 @@ class _RamuzchiBoboState extends State<RamuzchiBobo> {
       Starsvalue.add(fransuz);
       DataBase.setStarSkeyWord(Starskey);
       DataBase.setStarSvalueWord(Starsvalue);
+
       showSuccessMessage(context, message: "Word succses added");
       Navigator.pop(context);
     } else {
